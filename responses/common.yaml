@@ -1,0 +1,51 @@
+components:
+  responses:
+    200:
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/common.yaml#/components/schemas/OK"
+    200_pagination:
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/common.yaml#/components/schemas/OK_pagination"
+    201:
+      description: Created.
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/common.yaml#/components/schemas/OK"
+    400:
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/common.yaml#/components/schemas/BadRequest"
+    400_Partial:
+      description: Partial Upload Bad Request
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/common.yaml#/components/schemas/BadRequest"
+          examples:
+            errorRequired:
+              value:
+                Error: "Parameter is required"
+            errorNotFound:
+              value:
+                Error: "Parameter 1 is not found"
+    401:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/common.yaml#/components/schemas/Unauthorized"
+    500:
+      description: "Unexpected Error"
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/common.yaml#/components/schemas/UnexpectedError"

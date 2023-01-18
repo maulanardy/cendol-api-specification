@@ -1,0 +1,40 @@
+components:
+  parameters:
+    queryId:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: string
+        format: string
+    limit:
+      name: limit
+      in: query
+      description: Limit digunakan untuk membatasi data yg di-request (paging)
+      schema:
+        type: integer
+      example: 10
+    offset:
+      name: offset
+      in: query
+      description: Offset adalah posisi dalam dataset dari record tertentu. Mengambil subset record yang dimulai dengan nilai offset.
+      schema:
+        type: integer
+      example: 0
+    suggestion:
+      name: suggestion
+      in: query
+      schema:
+        type: string
+    flag:
+      name: flag
+      in: query
+      schema:
+        type: string
+        enum:
+        - "Appeal"
+        - "Cancel Participant"
+        - "Cancel PLTE"
+        - "Exemption"
+        - "Late"
+        - "Recall Exemption"
